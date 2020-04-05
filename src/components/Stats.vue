@@ -71,7 +71,7 @@
         <v-list-item two-line="">
           <v-list-item-content>
             <v-list-item-title class="headline mb-1">
-              Cases Today
+              Cases today
             </v-list-item-title>
             <v-list-item-subtitle
               v-text="stats.todayCases"
@@ -89,7 +89,7 @@
         <v-list-item two-line="">
           <v-list-item-content>
             <v-list-item-title class="headline mb-1">
-              Deaths Today
+              Deaths today
             </v-list-item-title>
             <v-list-item-subtitle
               v-text="stats.todayDeaths"
@@ -107,7 +107,7 @@
         <v-list-item two-line="">
           <v-list-item-content>
             <v-list-item-title class="headline mb-1">
-              Affected Countries
+              Affected countries
             </v-list-item-title>
             <v-list-item-subtitle
               v-text="stats.affectedCountries"
@@ -125,9 +125,11 @@
         <v-list-item two-line="">
           <v-list-item-content>
             <v-list-item-title class="headline mb-1">
-              Last Updated
+              Last updated
             </v-list-item-title>
-            <v-list-item-subtitle v-text="stats.updated"></v-list-item-subtitle>
+            <v-list-item-subtitle>
+              {{ stats.updated | unixToDate }}
+            </v-list-item-subtitle>
           </v-list-item-content>
 
           <v-list-item-avatar tile>
