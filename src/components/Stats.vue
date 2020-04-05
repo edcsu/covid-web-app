@@ -102,6 +102,24 @@
         </v-list-item>
       </v-card>
     </v-col>
+    <v-col v-if="stats.affectedCountries">
+      <v-card outlined>
+        <v-list-item two-line="">
+          <v-list-item-content>
+            <v-list-item-title class="headline mb-1">
+              Affected Countries
+            </v-list-item-title>
+            <v-list-item-subtitle
+              v-text="stats.affectedCountries"
+            ></v-list-item-subtitle>
+          </v-list-item-content>
+
+          <v-list-item-avatar tile>
+            <v-icon>mdi-image</v-icon>
+          </v-list-item-avatar>
+        </v-list-item>
+      </v-card>
+    </v-col>
     <v-col>
       <v-card outlined>
         <v-list-item two-line="">
