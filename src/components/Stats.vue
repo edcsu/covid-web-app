@@ -29,7 +29,7 @@
           </v-list-item-content>
 
           <v-list-item-avatar tile>
-            <v-icon>mdi-image</v-icon>
+            <v-icon>mdi-account-check</v-icon>
           </v-list-item-avatar>
         </v-list-item>
       </v-card>
@@ -45,7 +45,7 @@
           </v-list-item-content>
 
           <v-list-item-avatar tile>
-            <v-icon>mdi-image</v-icon>
+            <v-icon>mdi-doctor</v-icon>
           </v-list-item-avatar>
         </v-list-item>
       </v-card>
@@ -61,7 +61,7 @@
           </v-list-item-content>
 
           <v-list-item-avatar tile>
-            <v-icon>mdi-image</v-icon>
+            <v-icon>mdi-account-multiple-remove</v-icon>
           </v-list-item-avatar>
         </v-list-item>
       </v-card>
@@ -79,7 +79,7 @@
           </v-list-item-content>
 
           <v-list-item-avatar tile>
-            <v-icon>mdi-image</v-icon>
+            <v-icon>mdi-account-plus</v-icon>
           </v-list-item-avatar>
         </v-list-item>
       </v-card>
@@ -97,7 +97,7 @@
           </v-list-item-content>
 
           <v-list-item-avatar tile>
-            <v-icon>mdi-image</v-icon>
+            <v-icon>mdi-account-multiple-minus</v-icon>
           </v-list-item-avatar>
         </v-list-item>
       </v-card>
@@ -133,7 +133,7 @@
           </v-list-item-content>
 
           <v-list-item-avatar tile>
-            <v-icon>mdi-image</v-icon>
+            <v-icon>mdi-clock-outline</v-icon>
           </v-list-item-avatar>
         </v-list-item>
       </v-card>
