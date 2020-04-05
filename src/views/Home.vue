@@ -40,7 +40,7 @@ export default {
   data: () => ({
     globalSummary: countryObject,
     defaultSummary: countryObject,
-    timeInterval: 200000
+    timeInterval: 180000
   }),
 
   methods: {
