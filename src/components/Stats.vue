@@ -1,7 +1,7 @@
 <template>
   <v-row>
     <v-col>
-      <v-card outlined class="blue lighten-2">
+      <v-card outlined class="blue lighten-2" width="255px">
         <v-list-item two-line="">
           <v-list-item-content>
             <v-list-item-title class="mb-1">
@@ -14,7 +14,7 @@
           </v-list-item-content>
 
           <v-list-item-avatar tile>
-            <v-icon class="">mdi-account-circle</v-icon>
+            <v-icon class="" size="32px">mdi-account-circle</v-icon>
           </v-list-item-avatar>
         </v-list-item>
       </v-card>
@@ -33,7 +33,7 @@
           </v-list-item-content>
 
           <v-list-item-avatar tile>
-            <v-icon class="">mdi-account-check</v-icon>
+            <v-icon class="" size="32px">mdi-account-check</v-icon>
           </v-list-item-avatar>
         </v-list-item>
       </v-card>
@@ -52,7 +52,7 @@
           </v-list-item-content>
 
           <v-list-item-avatar tile>
-            <v-icon class="">mdi-doctor</v-icon>
+            <v-icon class="" size="32px">mdi-doctor</v-icon>
           </v-list-item-avatar>
         </v-list-item>
       </v-card>
@@ -71,7 +71,7 @@
           </v-list-item-content>
 
           <v-list-item-avatar tile>
-            <v-icon>mdi-account-multiple-remove</v-icon>
+            <v-icon size="32px">mdi-account-multiple-remove</v-icon>
           </v-list-item-avatar>
         </v-list-item>
       </v-card>
@@ -90,7 +90,7 @@
           </v-list-item-content>
 
           <v-list-item-avatar tile>
-            <v-icon>mdi-account-plus</v-icon>
+            <v-icon size="32px">mdi-account-plus</v-icon>
           </v-list-item-avatar>
         </v-list-item>
       </v-card>
@@ -109,7 +109,7 @@
           </v-list-item-content>
 
           <v-list-item-avatar tile>
-            <v-icon>mdi-account-multiple-minus</v-icon>
+            <v-icon size="32px">mdi-account-multiple-minus</v-icon>
           </v-list-item-avatar>
         </v-list-item>
       </v-card>
@@ -128,7 +128,7 @@
           </v-list-item-content>
 
           <v-list-item-avatar tile>
-            <v-icon>mdi-image</v-icon>
+            <v-icon size="32px">mdi-map-marker</v-icon>
           </v-list-item-avatar>
         </v-list-item>
       </v-card>
@@ -146,7 +146,7 @@
           </v-list-item-content>
 
           <v-list-item-avatar tile>
-            <v-icon>mdi-clock-outline</v-icon>
+            <v-icon size="32px">mdi-clock-outline</v-icon>
           </v-list-item-avatar>
         </v-list-item>
       </v-card>
