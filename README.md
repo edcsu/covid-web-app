@@ -1,5 +1,14 @@
 # covid-web-app
 
+## Live Demo
+
+See [Covid19 App](https://floating-headland-29129.herokuapp.com/).
+
+## Description
+
+The application shows global and Uganda statistics.
+It is updated after every 3 minutes.
+
 ## Project setup
 
 ```
