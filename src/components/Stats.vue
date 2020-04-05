@@ -1,57 +1,64 @@
 <template>
   <v-row>
     <v-col>
-      <v-card outlined>
+      <v-card outlined class="blue lighten-2">
         <v-list-item two-line="">
           <v-list-item-content>
             <v-list-item-title class="headline mb-1">
               Total cases
             </v-list-item-title>
-            <v-list-item-subtitle v-text="stats.cases"> </v-list-item-subtitle>
+            <v-list-item-subtitle
+              v-text="stats.cases"
+              class=""
+            ></v-list-item-subtitle>
           </v-list-item-content>
 
           <v-list-item-avatar tile>
-            <v-icon>mdi-account-circle</v-icon>
+            <v-icon class="">mdi-account-circle</v-icon>
           </v-list-item-avatar>
         </v-list-item>
       </v-card>
     </v-col>
     <v-col>
-      <v-card outlined>
+      <v-card outlined class="success">
         <v-list-item two-line="">
           <v-list-item-content>
             <v-list-item-title class="headline mb-1">
               Total recoveries
             </v-list-item-title>
             <v-list-item-subtitle
+              class=""
               v-text="stats.recovered"
             ></v-list-item-subtitle>
           </v-list-item-content>
 
           <v-list-item-avatar tile>
-            <v-icon>mdi-account-check</v-icon>
+            <v-icon class="">mdi-account-check</v-icon>
           </v-list-item-avatar>
         </v-list-item>
       </v-card>
     </v-col>
     <v-col>
-      <v-card outlined>
+      <v-card outlined class="amber">
         <v-list-item two-line="">
           <v-list-item-content>
             <v-list-item-title class="headline mb-1">
               Total active cases
             </v-list-item-title>
-            <v-list-item-subtitle v-text="stats.active"> </v-list-item-subtitle>
+            <v-list-item-subtitle
+              v-text="stats.active"
+              class=""
+            ></v-list-item-subtitle>
           </v-list-item-content>
 
           <v-list-item-avatar tile>
-            <v-icon>mdi-doctor</v-icon>
+            <v-icon class="">mdi-doctor</v-icon>
           </v-list-item-avatar>
         </v-list-item>
       </v-card>
     </v-col>
     <v-col>
-      <v-card outlined>
+      <v-card outlined class="red lighten-1">
         <v-list-item two-line="">
           <v-list-item-content>
             <v-list-item-title class="headline mb-1">
@@ -67,7 +74,7 @@
       </v-card>
     </v-col>
     <v-col>
-      <v-card outlined>
+      <v-card outlined class="cyan lighten-4">
         <v-list-item two-line="">
           <v-list-item-content>
             <v-list-item-title class="headline mb-1">
@@ -85,7 +92,7 @@
       </v-card>
     </v-col>
     <v-col>
-      <v-card outlined>
+      <v-card outlined class="red lighten-1">
         <v-list-item two-line="">
           <v-list-item-content>
             <v-list-item-title class="headline mb-1">
@@ -103,7 +110,7 @@
       </v-card>
     </v-col>
     <v-col v-if="stats.affectedCountries">
-      <v-card outlined>
+      <v-card outlined class="blue-grey lighten-4">
         <v-list-item two-line="">
           <v-list-item-content>
             <v-list-item-title class="headline mb-1">
@@ -121,7 +128,7 @@
       </v-card>
     </v-col>
     <v-col>
-      <v-card outlined>
+      <v-card outlined class="teal lighten-3">
         <v-list-item two-line="">
           <v-list-item-content>
             <v-list-item-title class="headline mb-1">
