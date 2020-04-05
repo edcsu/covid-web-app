@@ -1,7 +1,7 @@
 <template>
   <v-row>
     <v-col>
-      <v-card outlined class="blue lighten-2" width="255px">
+      <v-card outlined class="blue lighten-2">
         <v-list-item two-line="">
           <v-list-item-content>
             <v-list-item-title class="mb-1">
