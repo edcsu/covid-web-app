@@ -3,11 +3,12 @@ import App from "./App.vue";
 import router from "./router";
 import vuetify from "./plugins/vuetify";
 import { convertUnixTime } from "./Helpers/helperMethods";
+import "./assets/css/main.css";
 
 Vue.config.productionTip = false;
 
 Vue.filter("unixToDate", function(value) {
-  return convertUnixTime(value);
+  return value ? convertUnixTime(value) : 0;
 });
 
 new Vue({
