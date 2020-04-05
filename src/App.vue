@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <SideBar :visible="isVisible" />
+    <!-- <SideBar :visible="isVisible" /> -->
     <Header @hidesidemenu="hideDrawer" />
 
     <v-content>
@@ -15,15 +15,15 @@
 <script>
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import SideBar from "./components/SideBar";
+// import SideBar from "./components/SideBar";
 
 export default {
   name: "App",
 
   components: {
     Header,
-    Footer,
-    SideBar
+    Footer
+    // SideBar
   },
 
   data: () => ({

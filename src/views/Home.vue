@@ -30,9 +30,17 @@ export default {
     this.getDefaultDetails();
   },
 
+  mounted() {
+    setInterval(() => {
+      this.getGlobalDetails();
+      this.getDefaultDetails();
+    }, this.timeInterval);
+  },
+
   data: () => ({
     globalSummary: countryObject,
-    defaultSummary: countryObject
+    defaultSummary: countryObject,
+    timeInterval: 200000
   }),
 
   methods: {

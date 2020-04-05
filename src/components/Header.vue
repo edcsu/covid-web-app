@@ -1,6 +1,6 @@
 <template>
   <v-app-bar app clipped-left color="primary" dark>
-    <v-app-bar-nav-icon @click="$emit('hidesidemenu')"></v-app-bar-nav-icon>
+    <!-- <v-app-bar-nav-icon @click="$emit('hidesidemenu')"></v-app-bar-nav-icon> -->
     <div class="ml-1 d-flex align-center">
       COVID19 APP
     </div>
