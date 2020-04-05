@@ -1,33 +1,61 @@
 <template>
   <div class="home">
-    <!-- <img alt="Vue logo" src="../assets/logo.png" /> -->
     <h3>Global statistics</h3>
-    <Stats />
+    <Stats :summaryDetails="globalSummary" />
     <h3>Uganda statistics</h3>
-    <Stats />
-    <h3>Detailed Uganda statistics</h3>
-    <v-row>
-      <v-col>
-        <DetatiledStats />
-      </v-col>
-      <v-col>
-        <DetatiledStats />
-      </v-col>
-    </v-row>
+    <Stats :summaryDetails="defaultSummary" />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import Stats from "@/components/Stats";
-import DetatiledStats from "@/components/DetatiledStats";
+import { getContent, getSpecificContent } from "@/Helpers/helperMethods";
+import {
+  baseApiUrl,
+  globalTotals,
+  countryObject,
+  defaultCountry
+} from "@/Helpers/apiHelpers";
 
 export default {
   name: "Home",
 
   components: {
-    Stats,
-    DetatiledStats
+    Stats
+  },
+
+  created() {
+    this.getGlobalDetails();
+    this.getDefaultDetails();
+  },
+
+  data: () => ({
+    globalSummary: countryObject,
+    defaultSummary: countryObject
+  }),
+
+  methods: {
+    async getGlobalDetails() {
+      try {
+        const response = await getContent(baseApiUrl, globalTotals.all);
+        this.globalSummary = response.data;
+      } catch (error) {
+        console.error(error);
+      }
+    },
+    async getDefaultDetails() {
+      try {
+        const response = await getSpecificContent(
+          baseApiUrl,
+          globalTotals.yesterday,
+          defaultCountry
+        );
+        this.defaultSummary = response.data;
+      } catch (error) {
+        console.error(error);
+      }
+    }
   }
 };
 </script>

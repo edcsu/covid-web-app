@@ -1,4 +1,4 @@
-export const baseApiUrl = "corona.lmao.ninja/";
+export const baseApiUrl = "https://corona.lmao.ninja/";
 
 export const globalTotals = {
   all: "all",
@@ -15,3 +15,19 @@ export const johnsHopkins = {
   historical: "/v2/historical",
   allHistorical: "/v2/historical/all"
 };
+
+export const countryObject = {
+  cases: 0,
+  todayCases: 0,
+  deaths: 0,
+  todayDeaths: 0,
+  recovered: 0,
+  active: 0,
+  critical: 0,
+  casesPerOneMillion: 0,
+  deathsPerOneMillion: 0,
+  updated: 0,
+  affectedCountries: 0
+};
+
+export const defaultCountry = "Uganda";
