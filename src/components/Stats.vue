@@ -158,7 +158,7 @@
     </v-row>
     <v-row>
       <v-col>
-        <v-card outlined class="pink lighten-1">
+        <v-card outlined class="pink lighten-4">
           <v-list-item two-line="">
             <v-list-item-content>
               <v-list-item-title class="mb-1">
