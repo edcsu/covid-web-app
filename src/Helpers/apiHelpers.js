@@ -27,7 +27,9 @@ export const countryObject = {
   casesPerOneMillion: 0,
   deathsPerOneMillion: 0,
   updated: 0,
-  affectedCountries: 0
+  affectedCountries: 0,
+  tests: 0,
+  testsPerOneMillion: 0
 };
 
 export const defaultCountry = "Uganda";

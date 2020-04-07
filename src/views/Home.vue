@@ -1,5 +1,13 @@
 <template>
   <div class="home">
+    <!-- <v-row>
+      <v-col>
+        <v-btn color="secondary" dark @click="refreshAll">
+          <v-icon class="mr-2">mdi-account-circle</v-icon>
+          Refresh Data
+        </v-btn>
+      </v-col>
+    </v-row> -->
     <h3>Global statistics</h3>
     <Stats :summaryDetails="globalSummary" />
     <h3>Uganda statistics</h3>
@@ -31,7 +39,7 @@ export default {
   },
 
   mounted() {
-    setInterval(() => {
+    Window.setInterval(() => {
       this.getGlobalDetails();
       this.getDefaultDetails();
     }, this.timeInterval);
@@ -63,6 +71,10 @@ export default {
       } catch (error) {
         console.error(error);
       }
+    },
+    async refreshAll() {
+      this.getGlobalDetails();
+      this.getDefaultDetails();
     }
   }
 };

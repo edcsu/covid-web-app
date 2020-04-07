@@ -59,6 +59,25 @@
         </v-card>
       </v-col>
       <v-col>
+        <v-card outlined class="pink lighten-1">
+          <v-list-item two-line="">
+            <v-list-item-content>
+              <v-list-item-title class="mb-1">
+                Total tests
+              </v-list-item-title>
+              <v-list-item-subtitle
+                class="display-1 font-weight-black"
+                v-text="stats.tests"
+              ></v-list-item-subtitle>
+            </v-list-item-content>
+
+            <v-list-item-avatar tile>
+              <v-icon size="32px">mdi-test-tube</v-icon>
+            </v-list-item-avatar>
+          </v-list-item>
+        </v-card>
+      </v-col>
+      <v-col>
         <v-card outlined class="red lighten-1">
           <v-list-item two-line="">
             <v-list-item-content>
@@ -113,6 +132,25 @@
 
             <v-list-item-avatar tile>
               <v-icon size="32px">mdi-account-multiple-minus</v-icon>
+            </v-list-item-avatar>
+          </v-list-item>
+        </v-card>
+      </v-col>
+      <v-col>
+        <v-card outlined class="pink lighten-1">
+          <v-list-item two-line="">
+            <v-list-item-content>
+              <v-list-item-title class="mb-1">
+                Tests Per One Million
+              </v-list-item-title>
+              <v-list-item-subtitle
+                class="display-1 font-weight-black"
+                v-text="stats.testsPerOneMillion"
+              ></v-list-item-subtitle>
+            </v-list-item-content>
+
+            <v-list-item-avatar tile>
+              <v-icon size="32px">mdi-test-tube</v-icon>
             </v-list-item-avatar>
           </v-list-item>
         </v-card>
