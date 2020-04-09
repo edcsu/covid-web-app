@@ -183,7 +183,15 @@
               <v-list-item-title class="mb-1">
                 Last updated
               </v-list-item-title>
-              <v-list-item-subtitle class="display-1 font-weight-black">
+              <v-list-item-subtitle
+                :class="[
+                  'font-weight-black',
+                  'headline',
+                  {
+                    'display-1': $vuetify.breakpoint.smAndUp
+                  }
+                ]"
+              >
                 {{ stats.updated | unixToDate }}
               </v-list-item-subtitle>
             </v-list-item-content>
