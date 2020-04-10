@@ -11,6 +11,10 @@ Vue.filter("unixToDate", function(value) {
   return value ? convertUnixTime(value) : 0;
 });
 
+Vue.filter("commaSeparator", function(amount) {
+  return amount.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
+});
+
 new Vue({
   router,
   vuetify,
