@@ -23,7 +23,8 @@ import {
   baseApiUrl,
   globalTotals,
   countryObject,
-  defaultCountry
+  defaultCountry,
+  countryTotals
 } from "@/Helpers/apiHelpers";
 
 export default {
@@ -48,7 +49,7 @@ export default {
   data: () => ({
     globalSummary: countryObject,
     defaultSummary: countryObject,
-    timeInterval: 180000
+    timeInterval: 600000
   }),
 
   methods: {
@@ -64,7 +65,7 @@ export default {
       try {
         const response = await getSpecificContent(
           baseApiUrl,
-          globalTotals.yesterday,
+          countryTotals.countries,
           defaultCountry
         );
         this.defaultSummary = response.data;

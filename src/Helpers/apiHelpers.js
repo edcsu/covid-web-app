@@ -1,12 +1,12 @@
 export const baseApiUrl = "https://corona.lmao.ninja/";
 
 export const globalTotals = {
-  all: "all",
+  all: "v2/all",
   yesterday: "yesterday"
 };
 
 export const countryTotals = {
-  countries: "/countries"
+  countries: "v2/countries"
 };
 
 // JHUCSSE (Data from Johns Hopkins University)

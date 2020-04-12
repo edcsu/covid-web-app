@@ -25,12 +25,12 @@
         </a>
         and
         <a
-          href="https://coronavirus.jhu.edu/map.html"
+          href="https://www.worldometers.info/coronavirus/"
           target="_blank"
           rel="noopener noreferrer"
           class="white--text"
         >
-          John hopkins University
+          Worldometer
         </a>
       </span>
     </v-card-text>

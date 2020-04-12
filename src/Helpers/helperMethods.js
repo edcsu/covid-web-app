@@ -19,9 +19,6 @@ export async function getSpecificContent(baseUrl, route, query) {
 }
 
 export function convertUnixTime(timestamp) {
-  // convert unix timestamp to milliseconds
-//   const timestamp_ms = timestamp * 1000;
-
   // initialize new Date object
   const date_ob = new Date(timestamp);
 
