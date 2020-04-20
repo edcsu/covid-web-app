@@ -15,9 +15,12 @@ export const continent = {
 
 // JHUCSSE (Data from Johns Hopkins University)
 export const johnsHopkins = {
-  all: "/v2/jhucsse",
-  historical: "/v2/historical",
-  allHistorical: "/v2/historical/all"
+  all: "v2/jhucsse",
+  historical: "v2/historical",
+  allHistorical: "v2/historical/all",
+  lastDays: {
+    lastdays: 35
+  }
 };
 
 export const countryObject = {
@@ -47,6 +50,12 @@ export const continentObject = {
   updated: 0,
   countinent: "",
   countries: 0
+};
+
+export const timelineObject = {
+  cases: {},
+  deaths: {},
+  recovered: {}
 };
 
 export const defaultCountry = "Uganda";

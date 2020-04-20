@@ -14,12 +14,15 @@
     <Statscontinent :summaryDetails="continentSummary" />
     <h3>Uganda statistics</h3>
     <Stats :summaryDetails="defaultSummary" />
+    <h3>Uganda Timeline</h3>
+    <LineChart :chartData="countryTimeline"></LineChart>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import Stats from "@/components/Stats";
+import LineChart from "@/components/LineChart";
 import Statscontinent from "@/components/Statscontinent";
 import { getContent, getSpecificContent } from "@/Helpers/helperMethods";
 import {
@@ -30,7 +33,9 @@ import {
   countryTotals,
   continent,
   continentObject,
-  defaultContinent
+  defaultContinent,
+  johnsHopkins,
+  timelineObject
 } from "@/Helpers/apiHelpers";
 
 export default {
@@ -38,13 +43,15 @@ export default {
 
   components: {
     Stats,
-    Statscontinent
+    Statscontinent,
+    LineChart
   },
 
   created() {
     this.getGlobalDetails();
     this.getDefaultDetails();
     this.getContinentDetails();
+    this.getCountryTimeline();
   },
 
   mounted() {
@@ -52,6 +59,7 @@ export default {
       this.getGlobalDetails();
       this.getDefaultDetails();
       this.getContinentDetails();
+      this.getCountryTimeline();
     }, this.timeInterval);
   },
 
@@ -59,6 +67,7 @@ export default {
     globalSummary: countryObject,
     defaultSummary: countryObject,
     continentSummary: continentObject,
+    countryTimeline: timelineObject,
     timeInterval: 600000
   }),
 
@@ -95,10 +104,26 @@ export default {
         console.error(error);
       }
     },
+    async getCountryTimeline() {
+      this.loaded = false;
+      try {
+        const response = await getSpecificContent(
+          baseApiUrl,
+          johnsHopkins.historical,
+          defaultCountry,
+          johnsHopkins.lastDays.lastdays
+        );
+        this.loaded = true;
+        this.countryTimeline = response.data.timeline;
+      } catch (error) {
+        console.error(error);
+      }
+    },
     refreshAll() {
       this.getGlobalDetails();
       this.getDefaultDetails();
       this.getContinentDetails();
+      this.getCountryTimeline();
     }
   }
 };

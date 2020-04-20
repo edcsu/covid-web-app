@@ -9,9 +9,13 @@ export async function getContent(baseUrl, route) {
   }
 }
 
-export async function getSpecificContent(baseUrl, route, query) {
+export async function getSpecificContent(baseUrl, route, query, lastdays) {
   try {
-    const response = await axios.get(`${baseUrl}${route}/${query}`);
+    const response = await axios.get(`${baseUrl}${route}/${query}`, {
+      params: {
+        lastdays
+      }
+    });
     return response;
   } catch (error) {
     console.error(error);
