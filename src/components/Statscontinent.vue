@@ -130,81 +130,6 @@
         </v-card>
       </v-col>
       <v-col>
-        <v-card outlined class="pink lighten-1">
-          <v-list-item two-line="">
-            <v-list-item-content>
-              <v-list-item-title class="mb-1">
-                Total tests
-              </v-list-item-title>
-              <v-list-item-subtitle class="display-1 font-weight-black">
-                {{ stats.tests | commaSeparator }}
-              </v-list-item-subtitle>
-            </v-list-item-content>
-
-            <v-list-item-avatar tile>
-              <v-icon size="32px">mdi-test-tube</v-icon>
-            </v-list-item-avatar>
-          </v-list-item>
-        </v-card>
-      </v-col>
-    </v-row>
-    <v-row>
-      <v-col v-if="stats.affectedCountries">
-        <v-card outlined class="blue-grey lighten-4">
-          <v-list-item two-line="">
-            <v-list-item-content>
-              <v-list-item-title class="mb-1">
-                Affected countries
-              </v-list-item-title>
-              <v-list-item-subtitle
-                class="display-1 font-weight-black"
-                v-text="stats.affectedCountries"
-              ></v-list-item-subtitle>
-            </v-list-item-content>
-
-            <v-list-item-avatar tile>
-              <v-icon size="32px">mdi-map-marker</v-icon>
-            </v-list-item-avatar>
-          </v-list-item>
-        </v-card>
-      </v-col>
-      <v-col>
-        <v-card outlined class="blue lighten-4">
-          <v-list-item two-line="">
-            <v-list-item-content>
-              <v-list-item-title class="mb-1">
-                Cases Per One Million
-              </v-list-item-title>
-              <v-list-item-subtitle class="display-1 font-weight-black">
-                {{ stats.casesPerOneMillion | commaSeparator }}
-              </v-list-item-subtitle>
-            </v-list-item-content>
-
-            <v-list-item-avatar tile>
-              <v-icon size="32px">mdi-account-group</v-icon>
-            </v-list-item-avatar>
-          </v-list-item>
-        </v-card>
-      </v-col>
-      <v-col>
-        <v-card outlined class="pink lighten-4">
-          <v-list-item two-line="">
-            <v-list-item-content>
-              <v-list-item-title class="mb-1">
-                Tests Per One Million
-              </v-list-item-title>
-              <v-list-item-subtitle class="display-1 font-weight-black">
-                {{ stats.testsPerOneMillion | commaSeparator }}
-              </v-list-item-subtitle>
-            </v-list-item-content>
-
-            <v-list-item-avatar tile>
-              <v-icon size="32px">mdi-test-tube</v-icon>
-            </v-list-item-avatar>
-          </v-list-item>
-        </v-card>
-      </v-col>
-      <v-col>
         <v-card outlined class="teal lighten-3">
           <v-list-item two-line="">
             <v-list-item-content>
@@ -236,7 +161,7 @@
 
 <script>
 export default {
-  name: "Stats",
+  name: "Statscontinent",
   props: ["summaryDetails"],
   data: () => ({
     right: null

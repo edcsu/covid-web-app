@@ -9,6 +9,10 @@ export const countryTotals = {
   countries: "v2/countries"
 };
 
+export const continent = {
+  continents: "v2/continents"
+};
+
 // JHUCSSE (Data from Johns Hopkins University)
 export const johnsHopkins = {
   all: "/v2/jhucsse",
@@ -32,4 +36,18 @@ export const countryObject = {
   testsPerOneMillion: 0
 };
 
+export const continentObject = {
+  cases: 0,
+  todayCases: 0,
+  deaths: 0,
+  todayDeaths: 0,
+  recovered: 0,
+  active: 0,
+  critical: 0,
+  updated: 0,
+  countinent: "",
+  countries: 0
+};
+
 export const defaultCountry = "Uganda";
+export const defaultContinent = "Africa";
