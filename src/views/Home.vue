@@ -15,7 +15,7 @@
     <h3>Uganda statistics</h3>
     <Stats :summaryDetails="defaultSummary" />
     <h3>Uganda Timeline</h3>
-    <LineChart :chartData="countryTimeline"></LineChart>
+    <LineChart :chartData="countryTimeline" v-if="loaded"></LineChart>
   </div>
 </template>
 
@@ -68,7 +68,8 @@ export default {
     defaultSummary: countryObject,
     continentSummary: continentObject,
     countryTimeline: timelineObject,
-    timeInterval: 600000
+    timeInterval: 600000,
+    loaded: false
   }),
 
   methods: {
