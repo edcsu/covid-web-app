@@ -13,7 +13,7 @@
     <h3>Africa statistics</h3>
     <Statscontinent :summaryDetails="continentSummary" />
     <h3>East Africa statistics</h3>
-    <Statscontinent :summaryDetails="eastAfricaSummary" />
+    <Stats :summaryDetails="eastAfricaSummary" />
     <h3>Uganda statistics</h3>
     <Stats :summaryDetails="defaultSummary" />
     <h3>Uganda Timeline</h3>
