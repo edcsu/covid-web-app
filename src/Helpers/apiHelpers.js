@@ -60,3 +60,11 @@ export const timelineObject = {
 
 export const defaultCountry = "Uganda";
 export const defaultContinent = "Africa";
+export const eastAfricaCountries = [
+  "Uganda",
+  "Kenya",
+  "Tanzania",
+  "Rwanda",
+  "Burundi",
+  "South Sudan"
+];

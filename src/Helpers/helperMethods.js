@@ -1,4 +1,5 @@
 import axios from "axios";
+import { countryObject } from "./apiHelpers";
 
 export async function getContent(baseUrl, route) {
   try {
@@ -45,4 +46,23 @@ export function convertUnixTime(timestamp) {
   const seconds = ("0" + date_ob.getSeconds()).slice(-2);
   // date & time as YYYY-MM-DD hh:mm:ss format:
   return `${year}-${month}-${date} ${hours}:${minutes}:${seconds}`;
+}
+
+export function populateData(array) {
+  let newData = { ...countryObject };
+  array.forEach(element => {
+    newData.cases += element.cases;
+    newData.todayCases += element.todayCases;
+    newData.deaths += element.deaths;
+    newData.todayDeaths += element.todayDeaths;
+    newData.recovered += element.recovered;
+    newData.active += element.active;
+    newData.critical += element.critical;
+    newData.casesPerOneMillion += element.casesPerOneMillion;
+    newData.deathsPerOneMillion += element.deathsPerOneMillion;
+    newData.updated += element.updated;
+    newData.tests += element.tests;
+    newData.testsPerOneMillion += element.testsPerOneMillion;
+  });
+  return newData;
 }

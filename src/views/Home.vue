@@ -12,6 +12,8 @@
     <Stats :summaryDetails="globalSummary" />
     <h3>Africa statistics</h3>
     <Statscontinent :summaryDetails="continentSummary" />
+    <h3>East Africa statistics</h3>
+    <Statscontinent :summaryDetails="eastAfricaSummary" />
     <h3>Uganda statistics</h3>
     <Stats :summaryDetails="defaultSummary" />
     <h3>Uganda Timeline</h3>
@@ -24,7 +26,11 @@
 import Stats from "@/components/Stats";
 import LineChart from "@/components/LineChart";
 import Statscontinent from "@/components/Statscontinent";
-import { getContent, getSpecificContent } from "@/Helpers/helperMethods";
+import {
+  getContent,
+  getSpecificContent,
+  populateData
+} from "@/Helpers/helperMethods";
 import {
   baseApiUrl,
   globalTotals,
@@ -35,7 +41,8 @@ import {
   continentObject,
   defaultContinent,
   johnsHopkins,
-  timelineObject
+  timelineObject,
+  eastAfricaCountries
 } from "@/Helpers/apiHelpers";
 
 export default {
@@ -48,6 +55,7 @@ export default {
   },
 
   created() {
+    this.getEastAfricaDetails();
     this.getGlobalDetails();
     this.getDefaultDetails();
     this.getContinentDetails();
@@ -56,6 +64,7 @@ export default {
 
   mounted() {
     setInterval(() => {
+      this.getEastAfricaDetails();
       this.getGlobalDetails();
       this.getDefaultDetails();
       this.getContinentDetails();
@@ -66,6 +75,7 @@ export default {
   data: () => ({
     globalSummary: countryObject,
     defaultSummary: countryObject,
+    eastAfricaSummary: countryObject,
     continentSummary: continentObject,
     countryTimeline: timelineObject,
     timeInterval: 600000,
@@ -89,6 +99,18 @@ export default {
           defaultCountry
         );
         this.defaultSummary = response.data;
+      } catch (error) {
+        console.error(error);
+      }
+    },
+    async getEastAfricaDetails() {
+      try {
+        const response = await getSpecificContent(
+          baseApiUrl,
+          countryTotals.countries,
+          eastAfricaCountries.join()
+        );
+        this.eastAfricaSummary = populateData(response.data);
       } catch (error) {
         console.error(error);
       }
