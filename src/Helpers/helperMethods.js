@@ -60,7 +60,7 @@ export function populateData(array) {
     newData.critical += element.critical;
     newData.casesPerOneMillion += element.casesPerOneMillion;
     newData.deathsPerOneMillion += element.deathsPerOneMillion;
-    newData.updated += element.updated;
+    newData.updated = element.updated;
     newData.tests += element.tests;
     newData.testsPerOneMillion += element.testsPerOneMillion;
   });
