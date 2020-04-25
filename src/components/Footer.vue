@@ -23,6 +23,15 @@
         >
           WHO
         </a>
+        ,
+        <a
+          href="https://coronavirus.jhu.edu/map.html"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="white--text"
+        >
+          John hopkins University
+        </a>
         and
         <a
           href="https://www.worldometers.info/coronavirus/"
