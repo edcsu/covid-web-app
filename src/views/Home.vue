@@ -26,7 +26,7 @@
 // @ is an alias to /src
 import Stats from "@/components/Stats";
 import LineChart from "@/components/LineChart";
-import StatsContinent from "@/components/StatsContinent";
+import StatsContinent from "@/components/Statscontinent";
 import {
   getContent,
   getSpecificContent,
