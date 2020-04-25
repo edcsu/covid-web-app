@@ -1,7 +1,7 @@
 <template>
   <v-container fluid>
     <v-row>
-      <v-col>
+      <v-col cols="12" sm="6" md="6" lg="3" xl="3">
         <v-card outlined class="blue lighten-2">
           <v-list-item two-line="">
             <v-list-item-content>
@@ -19,7 +19,7 @@
           </v-list-item>
         </v-card>
       </v-col>
-      <v-col>
+      <v-col cols="12" sm="6" md="6" lg="3" xl="3">
         <v-card outlined class="success">
           <v-list-item two-line="">
             <v-list-item-content>
@@ -37,7 +37,7 @@
           </v-list-item>
         </v-card>
       </v-col>
-      <v-col>
+      <v-col cols="12" sm="6" md="6" lg="3" xl="3">
         <v-card outlined class="amber">
           <v-list-item two-line="">
             <v-list-item-content>
@@ -55,7 +55,7 @@
           </v-list-item>
         </v-card>
       </v-col>
-      <v-col>
+      <v-col cols="12" sm="6" md="6" lg="3" xl="3">
         <v-card outlined class="orange lighten-2">
           <v-list-item two-line="">
             <v-list-item-content>
@@ -75,7 +75,7 @@
       </v-col>
     </v-row>
     <v-row>
-      <v-col>
+      <v-col cols="12" sm="6" md="6" lg="3" xl="3">
         <v-card outlined class="red lighten-1">
           <v-list-item two-line="">
             <v-list-item-content>
@@ -93,7 +93,7 @@
           </v-list-item>
         </v-card>
       </v-col>
-      <v-col>
+      <v-col cols="12" sm="6" md="6" lg="3" xl="3">
         <v-card outlined class="cyan lighten-4">
           <v-list-item two-line="">
             <v-list-item-content>
@@ -111,7 +111,7 @@
           </v-list-item>
         </v-card>
       </v-col>
-      <v-col>
+      <v-col cols="12" sm="6" md="6" lg="3" xl="3">
         <v-card outlined class="red lighten-1">
           <v-list-item two-line="">
             <v-list-item-content>
@@ -129,7 +129,7 @@
           </v-list-item>
         </v-card>
       </v-col>
-      <v-col>
+      <v-col cols="12" sm="6" md="6" lg="3" xl="3">
         <v-card outlined class="teal lighten-3" min-height="90px">
           <v-list-item two-line="">
             <v-list-item-content>
