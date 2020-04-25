@@ -11,13 +11,14 @@
     <h3>Global statistics</h3>
     <Stats :summaryDetails="globalSummary" />
     <h3>Africa statistics</h3>
-    <Statscontinent :summaryDetails="continentSummary" />
+    <StatsContinent :summaryDetails="continentSummary" />
     <h3>East Africa statistics</h3>
     <Stats :summaryDetails="eastAfricaSummary" />
     <h3>Uganda statistics</h3>
     <Stats :summaryDetails="defaultSummary" />
     <h3>Uganda Timeline</h3>
-    <LineChart :chartData="countryTimeline" v-if="loaded"></LineChart>
+    <LineChart class="mb-6" :chartData="countryTimeline" v-if="loaded">
+    </LineChart>
   </div>
 </template>
 
@@ -25,7 +26,7 @@
 // @ is an alias to /src
 import Stats from "@/components/Stats";
 import LineChart from "@/components/LineChart";
-import Statscontinent from "@/components/Statscontinent";
+import StatsContinent from "@/components/StatsContinent";
 import {
   getContent,
   getSpecificContent,
@@ -50,7 +51,7 @@ export default {
 
   components: {
     Stats,
-    Statscontinent,
+    StatsContinent,
     LineChart
   },
 

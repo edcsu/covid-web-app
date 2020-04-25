@@ -130,21 +130,13 @@
         </v-card>
       </v-col>
       <v-col>
-        <v-card outlined class="teal lighten-3">
+        <v-card outlined class="teal lighten-3" min-height="90px">
           <v-list-item two-line="">
             <v-list-item-content>
               <v-list-item-title class="mb-1">
                 Last updated
               </v-list-item-title>
-              <v-list-item-subtitle
-                :class="[
-                  'font-weight-black',
-                  'headline',
-                  {
-                    'display-1': $vuetify.breakpoint.smAndUp
-                  }
-                ]"
-              >
+              <v-list-item-subtitle class="font-weight-black date-size mt-3">
                 {{ stats.updated | unixToDate }}
               </v-list-item-subtitle>
             </v-list-item-content>
@@ -156,12 +148,17 @@
         </v-card>
       </v-col>
     </v-row>
+    <!-- <v-row>
+      <span class="text-muted">
+        Last updated {{ stats.updated | unixToDate }}
+      </span>
+    </v-row> -->
   </v-container>
 </template>
 
 <script>
 export default {
-  name: "Statscontinent",
+  name: "StatsContinent",
   props: ["summaryDetails"],
   data: () => ({
     right: null

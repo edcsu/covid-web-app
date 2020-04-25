@@ -1,7 +1,7 @@
 <template>
   <v-container fluid>
     <v-row>
-      <v-col>
+      <v-col cols="12" sm="6" md="6" lg="3" xl="3">
         <v-card outlined class="blue lighten-2">
           <v-list-item two-line="">
             <v-list-item-content>
@@ -19,7 +19,7 @@
           </v-list-item>
         </v-card>
       </v-col>
-      <v-col>
+      <v-col cols="12" sm="6" md="6" lg="3" xl="3">
         <v-card outlined class="success">
           <v-list-item two-line="">
             <v-list-item-content>
@@ -37,7 +37,7 @@
           </v-list-item>
         </v-card>
       </v-col>
-      <v-col>
+      <v-col cols="12" sm="6" md="6" lg="3" xl="3">
         <v-card outlined class="amber">
           <v-list-item two-line="">
             <v-list-item-content>
@@ -55,7 +55,7 @@
           </v-list-item>
         </v-card>
       </v-col>
-      <v-col>
+      <v-col cols="12" sm="6" md="6" lg="3" xl="3">
         <v-card outlined class="orange lighten-2">
           <v-list-item two-line="">
             <v-list-item-content>
@@ -75,7 +75,7 @@
       </v-col>
     </v-row>
     <v-row>
-      <v-col>
+      <v-col cols="12" sm="6" md="6" lg="3" xl="3">
         <v-card outlined class="red lighten-1">
           <v-list-item two-line="">
             <v-list-item-content>
@@ -93,7 +93,7 @@
           </v-list-item>
         </v-card>
       </v-col>
-      <v-col>
+      <v-col cols="12" sm="6" md="6" lg="3" xl="3">
         <v-card outlined class="cyan lighten-4">
           <v-list-item two-line="">
             <v-list-item-content>
@@ -111,7 +111,7 @@
           </v-list-item>
         </v-card>
       </v-col>
-      <v-col>
+      <v-col cols="12" sm="6" md="6" lg="3" xl="3">
         <v-card outlined class="red lighten-1">
           <v-list-item two-line="">
             <v-list-item-content>
@@ -129,7 +129,25 @@
           </v-list-item>
         </v-card>
       </v-col>
-      <v-col>
+      <v-col cols="12" sm="6" md="6" lg="3" xl="3">
+        <v-card outlined class="teal lighten-3" min-height="90px">
+          <v-list-item two-line="">
+            <v-list-item-content>
+              <v-list-item-title class="mb-1">
+                Last updated
+              </v-list-item-title>
+              <v-list-item-subtitle class="font-weight-black date-size mt-3">
+                {{ stats.updated | unixToDate }}
+              </v-list-item-subtitle>
+            </v-list-item-content>
+
+            <v-list-item-avatar tile>
+              <v-icon size="32px">mdi-clock-outline</v-icon>
+            </v-list-item-avatar>
+          </v-list-item>
+        </v-card>
+      </v-col>
+      <!-- <v-col>
         <v-card outlined class="pink lighten-1">
           <v-list-item two-line="">
             <v-list-item-content>
@@ -146,9 +164,9 @@
             </v-list-item-avatar>
           </v-list-item>
         </v-card>
-      </v-col>
+      </v-col> -->
     </v-row>
-    <v-row>
+    <!-- <v-row>
       <v-col v-if="stats.affectedCountries">
         <v-card outlined class="blue-grey lighten-4">
           <v-list-item two-line="">
@@ -168,7 +186,7 @@
           </v-list-item>
         </v-card>
       </v-col>
-      <v-col>
+       <v-col>
         <v-card outlined class="blue lighten-4">
           <v-list-item two-line="">
             <v-list-item-content>
@@ -230,7 +248,12 @@
           </v-list-item>
         </v-card>
       </v-col>
-    </v-row>
+    </v-row>  -->
+    <!-- <v-row>
+      <span class="text-muted">
+        Last updated {{ stats.updated | unixToDate }}
+      </span>
+    </v-row> -->
   </v-container>
 </template>
 
