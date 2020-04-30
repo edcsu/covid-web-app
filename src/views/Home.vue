@@ -28,14 +28,14 @@
     </LineComparisonCasesChart>
     <h3>East Africa Total Recovered Timeline</h3>
     <LineComparisonRecoveredChart
-      class="mb-6"
+      class="mb-2"
       :chartData="eaTimeline"
       v-if="eaLoaded"
     >
     </LineComparisonRecoveredChart>
     <h3>East Africa Total Deaths Timeline</h3>
     <LineComparisonDeathsChart
-      class="mb-6"
+      class="mb-10"
       :chartData="eaTimeline"
       v-if="eaLoaded"
     >
