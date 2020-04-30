@@ -14,9 +14,19 @@ export async function getSpecificContent(baseUrl, route, query, lastdays) {
   try {
     const response = await axios.get(`${baseUrl}${route}/${query}`, {
       params: {
-        lastdays
+        lastdays: lastdays
       }
     });
+    return response;
+  } catch (error) {
+    console.error(error);
+  }
+}
+export async function getTimelineContent(baseUrl, route, query, lastdays) {
+  try {
+    const response = await axios.get(
+      `${baseUrl}${route}/${query}?lastdays=${lastdays}`
+    );
     return response;
   } catch (error) {
     console.error(error);

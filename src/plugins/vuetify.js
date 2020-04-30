@@ -1,6 +1,8 @@
 import Vue from "vue";
 import Vuetify from "vuetify/lib";
 import GithubComponent from "../Icons/GithubComponent";
+import VirusComponent from "../Icons/VirusComponent";
+import TwitterComponent from "../Icons/TwitterComponent";
 import "@mdi/font/css/materialdesignicons.css";
 
 Vue.use(Vuetify);
@@ -11,6 +13,12 @@ export default new Vuetify({
     values: {
       github: {
         component: GithubComponent
+      },
+      virus: {
+        component: VirusComponent
+      },
+      twitter: {
+        component: TwitterComponent
       }
     }
   },

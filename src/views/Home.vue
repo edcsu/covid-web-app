@@ -17,8 +17,29 @@
     <h3>Uganda statistics</h3>
     <Stats :summaryDetails="defaultSummary" />
     <h3>Uganda Timeline</h3>
-    <LineChart class="mb-6" :chartData="countryTimeline" v-if="loaded">
+    <LineChart class="mb-2" :chartData="countryTimeline" v-if="loaded">
     </LineChart>
+    <h3>East Africa Total Cases Timeline</h3>
+    <LineComparisonCasesChart
+      class="mb-2"
+      :chartData="eaTimeline"
+      v-if="eaLoaded"
+    >
+    </LineComparisonCasesChart>
+    <h3>East Africa Total Recovered Timeline</h3>
+    <LineComparisonRecoveredChart
+      class="mb-6"
+      :chartData="eaTimeline"
+      v-if="eaLoaded"
+    >
+    </LineComparisonRecoveredChart>
+    <h3>East Africa Total Deaths Timeline</h3>
+    <LineComparisonDeathsChart
+      class="mb-6"
+      :chartData="eaTimeline"
+      v-if="eaLoaded"
+    >
+    </LineComparisonDeathsChart>
   </div>
 </template>
 
@@ -26,11 +47,15 @@
 // @ is an alias to /src
 import Stats from "@/components/Stats";
 import LineChart from "@/components/LineChart";
+import LineComparisonCasesChart from "@/components/LineComparisonCasesChart";
+import LineComparisonRecoveredChart from "@/components/LineComparisonRecoveredChart";
+import LineComparisonDeathsChart from "@/components/LineComparisonDeathsChart";
 import StatsContinent from "@/components/Statscontinent";
 import {
   getContent,
   getSpecificContent,
-  populateData
+  populateData,
+  getTimelineContent
 } from "@/Helpers/helperMethods";
 import {
   baseApiUrl,
@@ -52,7 +77,10 @@ export default {
   components: {
     Stats,
     StatsContinent,
-    LineChart
+    LineChart,
+    LineComparisonCasesChart,
+    LineComparisonRecoveredChart,
+    LineComparisonDeathsChart
   },
 
   created() {
@@ -61,6 +89,7 @@ export default {
     this.getDefaultDetails();
     this.getContinentDetails();
     this.getCountryTimeline();
+    this.getEATimeline();
   },
 
   mounted() {
@@ -70,6 +99,7 @@ export default {
       this.getDefaultDetails();
       this.getContinentDetails();
       this.getCountryTimeline();
+      this.getEATimeline();
     }, this.timeInterval);
   },
 
@@ -79,8 +109,10 @@ export default {
     eastAfricaSummary: countryObject,
     continentSummary: continentObject,
     countryTimeline: timelineObject,
+    eaTimeline: [],
     timeInterval: 600000,
-    loaded: false
+    loaded: false,
+    eaLoaded: false
   }),
 
   methods: {
@@ -131,14 +163,29 @@ export default {
     async getCountryTimeline() {
       this.loaded = false;
       try {
-        const response = await getSpecificContent(
+        const response = await getTimelineContent(
           baseApiUrl,
           johnsHopkins.historical,
           defaultCountry,
-          johnsHopkins.lastDays.lastdays
+          johnsHopkins.lastDays.last45days
         );
         this.loaded = true;
         this.countryTimeline = response.data.timeline;
+      } catch (error) {
+        console.error(error);
+      }
+    },
+    async getEATimeline() {
+      this.eaLoaded = false;
+      try {
+        const response = await getTimelineContent(
+          baseApiUrl,
+          johnsHopkins.historical,
+          eastAfricaCountries.join(),
+          johnsHopkins.lastDays.last50days
+        );
+        this.eaLoaded = true;
+        this.eaTimeline = response.data;
       } catch (error) {
         console.error(error);
       }

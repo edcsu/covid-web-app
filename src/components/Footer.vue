@@ -11,7 +11,10 @@
       ]"
     >
       <span class>
-        {{ new Date().getFullYear() }} — <strong>COVID19 APP</strong>
+        <strong>#STAYHOME</strong>
+      </span>
+      <span class>
+        <strong>#WASHYOURHANDS</strong>
       </span>
       <span>
         Data from
