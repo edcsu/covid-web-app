@@ -11,7 +11,7 @@
     <v-tooltip bottom>
       <template v-slot:activator="{ on }">
         <v-btn
-          href="https://twitter.com/skeith696"
+          href="https://www.linkedin.com/in/ssewannonda-keith-edwin-443303129"
           target="_blank"
           icon
           v-on="on"
