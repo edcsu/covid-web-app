@@ -14,6 +14,9 @@
         <strong>#STAYHOME</strong>
       </span>
       <span class>
+        <strong>#TONSEMBERERA</strong>
+      </span>
+      <span class>
         <strong>#WASHYOURHANDS</strong>
       </span>
       <span>

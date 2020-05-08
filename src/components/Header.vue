@@ -16,6 +16,23 @@
           icon
           v-on="on"
         >
+          <v-icon class="svg-icon" v-text="'$vuetify.icons.linkedin'"></v-icon>
+        </v-btn>
+      </template>
+      <span>
+        Connect on LinkedIn
+        <v-icon class="">mdi-hand-pointing-up</v-icon>
+      </span>
+    </v-tooltip>
+
+    <v-tooltip bottom>
+      <template v-slot:activator="{ on }">
+        <v-btn
+          href="https://twitter.com/skeith696"
+          target="_blank"
+          icon
+          v-on="on"
+        >
           <v-icon class="svg-icon" v-text="'$vuetify.icons.twitter'"></v-icon>
         </v-btn>
       </template>

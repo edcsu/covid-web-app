@@ -19,6 +19,12 @@
     <h3>Uganda Timeline</h3>
     <LineChart class="mb-2" :chartData="countryTimeline" v-if="loaded">
     </LineChart>
+    <v-skeleton-loader
+      v-if="!loaded"
+      class="mx-auto"
+      min-width="300"
+      type="image"
+    ></v-skeleton-loader>
     <h3>East Africa Total Cases Timeline</h3>
     <LineComparisonCasesChart
       class="mb-2"
@@ -26,6 +32,12 @@
       v-if="eaLoaded"
     >
     </LineComparisonCasesChart>
+    <v-skeleton-loader
+      v-if="!eaLoaded"
+      class="mx-auto"
+      min-width="300"
+      type="image"
+    ></v-skeleton-loader>
     <h3>East Africa Total Recovered Timeline</h3>
     <LineComparisonRecoveredChart
       class="mb-2"
@@ -33,9 +45,21 @@
       v-if="eaLoaded"
     >
     </LineComparisonRecoveredChart>
+    <v-skeleton-loader
+      v-if="!eaLoaded"
+      class="mx-auto"
+      min-width="300"
+      type="image"
+    ></v-skeleton-loader>
     <h3>East Africa Total Deaths Timeline</h3>
+    <v-skeleton-loader
+      v-if="!eaLoaded"
+      class="mx-auto"
+      min-width="300"
+      type="image"
+    ></v-skeleton-loader>
     <LineComparisonDeathsChart
-      class="mb-10"
+      class="show-bottom"
       :chartData="eaTimeline"
       v-if="eaLoaded"
     >
@@ -167,7 +191,7 @@ export default {
           baseApiUrl,
           johnsHopkins.historical,
           defaultCountry,
-          johnsHopkins.lastDays.last45days
+          johnsHopkins.lastDays.last60days
         );
         this.loaded = true;
         this.countryTimeline = response.data.timeline;
@@ -182,7 +206,7 @@ export default {
           baseApiUrl,
           johnsHopkins.historical,
           eastAfricaCountries.join(),
-          johnsHopkins.lastDays.last50days
+          johnsHopkins.lastDays.last60days
         );
         this.eaLoaded = true;
         this.eaTimeline = response.data;
