@@ -25,6 +25,8 @@ export const johnsHopkins = {
     last45days: 45,
     last50days: 50,
     last60days: 60,
+    last70days: 70,
+    last80days: 80,
     last90days: 90
   }
 };
