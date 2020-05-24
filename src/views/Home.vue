@@ -10,12 +10,16 @@
     </v-row>
     <h3>Global statistics</h3>
     <Stats :summaryDetails="globalSummary" />
+    <StatsSkeleton v-if="!globalLoaded" />
     <h3>Africa statistics</h3>
     <StatsContinent :summaryDetails="continentSummary" />
+    <StatsSkeleton v-if="!continentLoaded" />
     <h3>East Africa statistics</h3>
     <Stats :summaryDetails="eastAfricaSummary" />
+    <StatsContinent :summaryDetails="!eaSummaryLoaded" />
     <h3>Uganda statistics</h3>
     <Stats :summaryDetails="defaultSummary" />
+    <StatsContinent :summaryDetails="!defaultLoaded" />
     <h3>Uganda Timeline</h3>
     <LineChart class="mb-2" :chartData="countryTimeline" v-if="loaded">
     </LineChart>
@@ -32,12 +36,7 @@
       v-if="eaLoaded"
     >
     </LineComparisonCasesChart>
-    <v-skeleton-loader
-      v-if="!eaLoaded"
-      class="mx-auto"
-      min-width="300"
-      type="image"
-    ></v-skeleton-loader>
+    <ChartSkeleton v-if="!eaLoaded" />
     <h3>East Africa Total Recovered Timeline</h3>
     <LineComparisonRecoveredChart
       class="mb-2"
@@ -45,19 +44,9 @@
       v-if="eaLoaded"
     >
     </LineComparisonRecoveredChart>
-    <v-skeleton-loader
-      v-if="!eaLoaded"
-      class="mx-auto"
-      min-width="300"
-      type="image"
-    ></v-skeleton-loader>
+    <ChartSkeleton v-if="!eaLoaded" />
     <h3>East Africa Total Deaths Timeline</h3>
-    <v-skeleton-loader
-      v-if="!eaLoaded"
-      class="mx-auto"
-      min-width="300"
-      type="image"
-    ></v-skeleton-loader>
+    <ChartSkeleton v-if="!eaLoaded" />
     <LineComparisonDeathsChart
       class="show-bottom"
       :chartData="eaTimeline"
@@ -75,6 +64,8 @@ import LineComparisonCasesChart from "@/components/LineComparisonCasesChart";
 import LineComparisonRecoveredChart from "@/components/LineComparisonRecoveredChart";
 import LineComparisonDeathsChart from "@/components/LineComparisonDeathsChart";
 import StatsContinent from "@/components/Statscontinent";
+import StatsSkeleton from "@/components/StatsSkeleton";
+import ChartSkeleton from "@/components/ChartSkeleton";
 import {
   getContent,
   getSpecificContent,
@@ -104,7 +95,9 @@ export default {
     LineChart,
     LineComparisonCasesChart,
     LineComparisonRecoveredChart,
-    LineComparisonDeathsChart
+    LineComparisonDeathsChart,
+    StatsSkeleton,
+    ChartSkeleton
   },
 
   created() {
@@ -136,19 +129,27 @@ export default {
     eaTimeline: [],
     timeInterval: 600000,
     loaded: false,
-    eaLoaded: false
+    eaLoaded: false,
+    globalLoaded: false,
+    eaSummaryLoaded: false,
+    defaultLoaded: false,
+    continentLoaded: false
   }),
 
   methods: {
     async getGlobalDetails() {
+      this.globalLoaded = false;
       try {
         const response = await getContent(baseApiUrl, globalTotals.all);
         this.globalSummary = response.data;
+        this.globalLoaded = true;
       } catch (error) {
+        this.globalLoaded = false;
         console.error(error);
       }
     },
     async getDefaultDetails() {
+      this.defaultLoaded = false;
       try {
         const response = await getSpecificContent(
           baseApiUrl,
@@ -156,11 +157,14 @@ export default {
           defaultCountry
         );
         this.defaultSummary = response.data;
+        this.defaultLoaded = true;
       } catch (error) {
         console.error(error);
+        this.defaultLoaded = false;
       }
     },
     async getEastAfricaDetails() {
+      this.eaSummaryLoaded = false;
       try {
         const response = await getSpecificContent(
           baseApiUrl,
@@ -168,11 +172,14 @@ export default {
           eastAfricaCountries.join()
         );
         this.eastAfricaSummary = populateData(response.data);
+        this.eaSummaryLoaded = true;
       } catch (error) {
         console.error(error);
+        this.eaSummaryLoaded = false;
       }
     },
     async getContinentDetails() {
+      this.continentLoaded = false;
       try {
         const response = await getSpecificContent(
           baseApiUrl,
@@ -180,8 +187,10 @@ export default {
           defaultContinent
         );
         this.continentSummary = response.data;
+        this.continentLoaded = true;
       } catch (error) {
         console.error(error);
+        this.continentLoaded = false;
       }
     },
     async getCountryTimeline() {
@@ -197,6 +206,7 @@ export default {
         this.countryTimeline = response.data.timeline;
       } catch (error) {
         console.error(error);
+        this.loaded = false;
       }
     },
     async getEATimeline() {
@@ -212,6 +222,7 @@ export default {
         this.eaTimeline = response.data;
       } catch (error) {
         console.error(error);
+        this.eaLoaded = false;
       }
     },
     refreshAll() {
