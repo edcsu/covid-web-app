@@ -9,17 +9,17 @@
       </v-col>
     </v-row>
     <h3>Global statistics</h3>
-    <Stats :summaryDetails="globalSummary" />
-    <StatsSkeleton v-if="!globalLoaded" />
+    <Stats :summaryDetails="globalSummary" v-if="globalLoaded" />
+    <StatsSkeleton v-else />
     <h3>Africa statistics</h3>
-    <StatsContinent :summaryDetails="continentSummary" />
-    <StatsSkeleton v-if="!continentLoaded" />
+    <StatsContinent :summaryDetails="continentSummary" v-if="continentLoaded" />
+    <StatsSkeleton v-else />
     <h3>East Africa statistics</h3>
-    <Stats :summaryDetails="eastAfricaSummary" />
-    <StatsContinent :summaryDetails="!eaSummaryLoaded" />
+    <Stats :summaryDetails="eastAfricaSummary" v-if="eaSummaryLoaded" />
+    <StatsSkeleton v-else />
     <h3>Uganda statistics</h3>
-    <Stats :summaryDetails="defaultSummary" />
-    <StatsContinent :summaryDetails="!defaultLoaded" />
+    <Stats :summaryDetails="defaultSummary" v-if="defaultLoaded" />
+    <StatsSkeleton v-else />
     <h3>Uganda Timeline</h3>
     <LineChart class="mb-2" :chartData="countryTimeline" v-if="loaded">
     </LineChart>
