@@ -47,3 +47,8 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 The API used to get the information is [NOVELCovid19API](https://corona.lmao.ninja/docs/).
 A big thanks to the maintainers for the hardwork put in to provide constantly updated official data.
+
+### Awesome novelCOVID19 Recognition
+
+This application is listed on [Awesome NovelCOVID](https://corona.lmao.ninja/docs/).
+Its a curated list of projects using the NovelCOVID API.
