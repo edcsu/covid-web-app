@@ -27,7 +27,8 @@ export const johnsHopkins = {
     last60days: 60,
     last70days: 70,
     last80days: 80,
-    last90days: 90
+    last90days: 90,
+    last100days: 100
   }
 };
 
