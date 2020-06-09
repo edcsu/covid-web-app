@@ -67,6 +67,13 @@
           type="image"
         ></v-skeleton-loader>
       </v-col>
+      <v-col cols="12" sm="6" md="6" lg="3" xl="3">
+        <v-skeleton-loader
+          class="mx-auto mb-2"
+          min-width="300"
+          type="text"
+        ></v-skeleton-loader>
+      </v-col>
     </v-row>
   </v-container>
 </template>

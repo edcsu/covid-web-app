@@ -255,9 +255,18 @@
       </span>
     </v-row> -->
     <v-row>
-      <v-col cols="12" sm="6" md="6" lg="3" xl="3" class="font-italic pt-0">
+      <v-col
+        cols="12"
+        sm="6"
+        md="6"
+        lg="3"
+        xl="3"
+        class="font-italic grey--text pt-0"
+      >
         <span class="font-weight-light">Last updated: </span>
-        <span>{{ stats.updated | convertToLocalDate }}</span>
+        <span class="font-weight-bold">{{
+          stats.updated | convertToLocalDate
+        }}</span>
       </v-col>
     </v-row>
   </v-container>
