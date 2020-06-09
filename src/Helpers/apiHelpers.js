@@ -38,6 +38,7 @@ export const countryObject = {
   deaths: 0,
   todayDeaths: 0,
   recovered: 0,
+  todayRecovered: 0,
   active: 0,
   critical: 0,
   casesPerOneMillion: 0,

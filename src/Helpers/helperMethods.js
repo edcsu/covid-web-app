@@ -76,3 +76,9 @@ export function populateData(array) {
   });
   return newData;
 }
+
+export function formattoLocalDate(updated) {
+  if (updated) {
+    return new Date(updated).toLocaleString();
+  }
+}

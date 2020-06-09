@@ -32,7 +32,7 @@
             </v-list-item-content>
 
             <v-list-item-avatar tile>
-              <v-icon class="" size="32px">mdi-account-check</v-icon>
+              <v-icon class="" size="32px">mdi-account-multiple-check</v-icon>
             </v-list-item-avatar>
           </v-list-item>
         </v-card>
@@ -130,29 +130,30 @@
         </v-card>
       </v-col>
       <v-col cols="12" sm="6" md="6" lg="3" xl="3">
-        <v-card outlined class="teal lighten-3" min-height="90px">
+        <v-card outlined class="green lighten-1" min-height="90px">
           <v-list-item two-line="">
             <v-list-item-content>
               <v-list-item-title class="mb-1">
-                Last updated
+                Recovered today
               </v-list-item-title>
-              <v-list-item-subtitle class="font-weight-black date-size mt-3">
-                {{ stats.updated | unixToDate }}
+              <v-list-item-subtitle class="display-1 font-weight-black">
+                {{ stats.todayRecovered | commaSeparator }}
               </v-list-item-subtitle>
             </v-list-item-content>
 
             <v-list-item-avatar tile>
-              <v-icon size="32px">mdi-clock-outline</v-icon>
+              <v-icon size="32px">mdi-account-check</v-icon>
             </v-list-item-avatar>
           </v-list-item>
         </v-card>
       </v-col>
     </v-row>
-    <!-- <v-row>
-      <span class="text-muted">
-        Last updated {{ stats.updated | unixToDate }}
-      </span>
-    </v-row> -->
+    <v-row>
+      <v-col cols="12" sm="6" md="6" lg="3" xl="3" class="font-italic pt-0">
+        <span class="font-weight-light">Last updated: </span>
+        <span>{{ stats.updated | convertToLocalDate }}</span>
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 
