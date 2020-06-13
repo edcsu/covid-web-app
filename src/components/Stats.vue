@@ -265,7 +265,7 @@
       >
         <span class="font-weight-light">Last updated: </span>
         <span class="font-weight-bold">{{
-          stats.updated | convertToLocalDate
+          stats.updated | convertToTimeAgo
         }}</span>
       </v-col>
     </v-row>
