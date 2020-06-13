@@ -16,6 +16,10 @@ const MONTH_NAMES = [
   "December"
 ];
 
+/**
+ * getContent
+ * @description Takes in a baseUrl value and a route name returns content
+ */
 export async function getContent(baseUrl, route) {
   try {
     const response = await axios.get(`${baseUrl}${route}`);
@@ -25,6 +29,11 @@ export async function getContent(baseUrl, route) {
   }
 }
 
+/**
+ * getSpecificContent
+ * @description Takes in a baseUrl value, route, query parameters
+ * and days name and returns content
+ */
 export async function getSpecificContent(baseUrl, route, query, lastdays) {
   try {
     const response = await axios.get(`${baseUrl}${route}/${query}`, {
@@ -37,6 +46,12 @@ export async function getSpecificContent(baseUrl, route, query, lastdays) {
     console.error(error);
   }
 }
+
+/**
+ * getSpecificContent
+ * @description Takes in a baseUrl value, route, query parameters
+ * and days name and returns content
+ */
 export async function getTimelineContent(baseUrl, route, query, lastdays) {
   try {
     const response = await axios.get(
@@ -48,6 +63,10 @@ export async function getTimelineContent(baseUrl, route, query, lastdays) {
   }
 }
 
+/**
+ * convertUnixTime
+ * @description Takes in a unix timestamp value and a date in YYYY-MM-DD hh:mm:ss format
+ */
 export function convertUnixTime(timestamp) {
   // initialize new Date object
   const date_ob = new Date(timestamp);
@@ -102,6 +121,10 @@ export function formattoLocalDate(updated) {
   }
 }
 
+/**
+ * getFormattedDate
+ * @description Takes in a date value and returns a formatted date
+ */
 function getFormattedDate(date, prefomattedDate = false, hideYear = false) {
   const day = date.getDate();
   const month = MONTH_NAMES[date.getMonth()];
@@ -129,6 +152,11 @@ function getFormattedDate(date, prefomattedDate = false, hideYear = false) {
   return `${day}. ${month} ${year}. at ${hours}:${minutes}`;
 }
 
+/**
+ * getFormattedDate
+ * @description Takes in a date value and returns a formatted date based on time
+ * difference with the current date-time
+ */
 export function timeAgo(dateParam) {
   if (!dateParam) {
     return null;
