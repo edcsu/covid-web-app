@@ -1,5 +1,7 @@
 # covid-web-app
 
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)]
+
 ## Live Demo
 
 See [Covid19 App](https://floating-headland-29129.herokuapp.com/).
