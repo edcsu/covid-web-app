@@ -1,23 +1,23 @@
-export const baseApiUrl = "https://corona.lmao.ninja/";
+export const baseApiUrl = "https://disease.sh/v2/";
 
 export const globalTotals = {
-  all: "v2/all",
+  all: "all",
   yesterday: "yesterday"
 };
 
 export const countryTotals = {
-  countries: "v2/countries"
+  countries: "countries"
 };
 
 export const continent = {
-  continents: "v2/continents"
+  continents: "continents"
 };
 
 // JHUCSSE (Data from Johns Hopkins University)
 export const johnsHopkins = {
-  all: "v2/jhucsse",
-  historical: "v2/historical",
-  allHistorical: "v2/historical/all",
+  all: "jhucsse",
+  historical: "historical",
+  allHistorical: "historical/all",
   lastDays: {
     last30days: 30,
     last35days: 35,
