@@ -2,10 +2,21 @@
   <div class="home">
     <v-row>
       <v-col>
-        <v-btn color="secondary" dark @click="refreshAll">
-          <v-icon class="mr-2">mdi-update</v-icon>
-          Refresh Data
-        </v-btn>
+        <v-tooltip bottom>
+          <template v-slot:activator="{ on }">
+            <v-btn color="secondary" dark @click="refreshAll" v-on="on">
+              <v-icon class="mr-2">mdi-update</v-icon>
+              Refresh Data
+            </v-btn>
+          </template>
+          <span>
+            Click to refresh now
+            <v-icon color="white">mdi-hand-pointing-up</v-icon>
+          </span>
+        </v-tooltip>
+      </v-col>
+      <v-col class="text-right mr-4">
+        <GenQrCode />
       </v-col>
     </v-row>
     <h3>Global statistics</h3>
@@ -62,6 +73,7 @@ import Stats from "@/components/Stats";
 import LineChart from "@/components/LineChart";
 import LineComparisonCasesChart from "@/components/LineComparisonCasesChart";
 import LineComparisonRecoveredChart from "@/components/LineComparisonRecoveredChart";
+import GenQrCode from "@/components/GenQrCode";
 import LineComparisonDeathsChart from "@/components/LineComparisonDeathsChart";
 import StatsContinent from "@/components/Statscontinent";
 import StatsSkeleton from "@/components/StatsSkeleton";
@@ -97,7 +109,8 @@ export default {
     LineComparisonRecoveredChart,
     LineComparisonDeathsChart,
     StatsSkeleton,
-    ChartSkeleton
+    ChartSkeleton,
+    GenQrCode
   },
 
   created() {
@@ -200,7 +213,7 @@ export default {
           baseApiUrl,
           johnsHopkins.historical,
           defaultCountry,
-          johnsHopkins.lastDays.last90days
+          johnsHopkins.lastDays.last110days
         );
         this.loaded = true;
         this.countryTimeline = response.data.timeline;
@@ -216,7 +229,7 @@ export default {
           baseApiUrl,
           johnsHopkins.historical,
           eastAfricaCountries.join(),
-          johnsHopkins.lastDays.last100days
+          johnsHopkins.lastDays.last115days
         );
         this.eaLoaded = true;
         this.eaTimeline = response.data;

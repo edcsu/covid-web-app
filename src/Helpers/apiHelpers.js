@@ -1,5 +1,7 @@
 export const baseApiUrl = "https://disease.sh/v2/";
 
+export const appUrl = "https://floating-headland-29129.herokuapp.com/";
+
 export const globalTotals = {
   all: "all",
   yesterday: "yesterday"
@@ -28,7 +30,11 @@ export const johnsHopkins = {
     last70days: 70,
     last80days: 80,
     last90days: 90,
-    last100days: 100
+    last100days: 100,
+    last105days: 105,
+    last110days: 110,
+    last115days: 115,
+    last120days: 120
   }
 };
 

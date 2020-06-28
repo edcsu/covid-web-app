@@ -16,6 +16,7 @@
     "chart.js": "^2.9.3",
     "core-js": "^3.6.4",
     "fibers": "^4.0.2",
+    "qrcode.vue": "^1.7.0",
     "utf-8-validate": "^5.0.2",
     "vue": "^2.6.11",
     "vue-chartjs": "^3.5.0",
