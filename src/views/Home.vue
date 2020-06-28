@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <v-row>
-      <v-col>
+      <v-col class="mt-6">
         <v-tooltip bottom>
           <template v-slot:activator="{ on }">
             <v-btn color="secondary" dark @click="refreshAll" v-on="on">
