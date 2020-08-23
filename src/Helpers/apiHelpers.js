@@ -1,4 +1,4 @@
-export const baseApiUrl = "https://disease.sh/v2/";
+export const baseApiUrl = "https://disease.sh/v3/covid-19/";
 
 export const appUrl = "https://floating-headland-29129.herokuapp.com/";
 
@@ -22,19 +22,18 @@ export const johnsHopkins = {
   allHistorical: "historical/all",
   lastDays: {
     last30days: 30,
-    last35days: 35,
-    last40days: 40,
-    last45days: 45,
     last50days: 50,
     last60days: 60,
-    last70days: 70,
-    last80days: 80,
     last90days: 90,
-    last100days: 100,
-    last105days: 105,
     last110days: 110,
     last115days: 115,
-    last120days: 120
+    last120days: 120,
+    last150days: 150,
+    last170days: 170,
+    last180days: 180,
+    last200days: 200,
+    last250days: 250,
+    last300days: 300
   }
 };
 
