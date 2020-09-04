@@ -17,25 +17,15 @@
         <strong>#WEARMASKINPUBLIC</strong>
       </span>
       <span>
-        Visit
+        View
         <a
-          href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019"
+          href="https://covid19globaltracker.web.app"
           target="_blank"
           rel="noopener noreferrer"
           class="white--text"
         >
-          WHO
+          COVID19 vaccine tracker
         </a>
-        and
-        <a
-          href="https://coronavirus.jhu.edu/map.html"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="white--text"
-        >
-          John hopkins University
-        </a>
-        for more info.
       </span>
       <span>
         Data from
