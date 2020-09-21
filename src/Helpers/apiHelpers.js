@@ -31,6 +31,7 @@ export const johnsHopkins = {
     last150days: 150,
     last170days: 170,
     last180days: 180,
+    last190days: 190,
     last200days: 200,
     last250days: 250,
     last300days: 300
