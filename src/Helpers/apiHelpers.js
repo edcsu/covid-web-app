@@ -22,17 +22,13 @@ export const johnsHopkins = {
   allHistorical: "historical/all",
   lastDays: {
     last30days: 30,
-    last50days: 50,
     last60days: 60,
     last90days: 90,
-    last110days: 110,
-    last115days: 115,
     last120days: 120,
     last150days: 150,
-    last170days: 170,
     last180days: 180,
-    last190days: 190,
     last200days: 200,
+    last220days: 220,
     last250days: 250,
     last300days: 300
   }

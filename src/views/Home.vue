@@ -213,7 +213,7 @@ export default {
           baseApiUrl,
           johnsHopkins.historical,
           defaultCountry,
-          johnsHopkins.lastDays.last190days
+          johnsHopkins.lastDays.last220days
         );
         this.loaded = true;
         this.countryTimeline = response.data.timeline;
@@ -229,7 +229,7 @@ export default {
           baseApiUrl,
           johnsHopkins.historical,
           eastAfricaCountries.join(),
-          johnsHopkins.lastDays.last190days
+          johnsHopkins.lastDays.last220days
         );
         this.eaLoaded = true;
         this.eaTimeline = response.data;
