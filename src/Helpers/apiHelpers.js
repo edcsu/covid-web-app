@@ -21,16 +21,14 @@ export const johnsHopkins = {
   historical: "historical",
   allHistorical: "historical/all",
   lastDays: {
-    last30days: 30,
-    last60days: 60,
-    last90days: 90,
-    last120days: 120,
-    last150days: 150,
-    last180days: 180,
     last200days: 200,
     last220days: 220,
     last250days: 250,
-    last300days: 300
+    last300days: 300,
+    last350days: 350,
+    last400days: 400,
+    last450days: 450,
+    last500days: 500
   }
 };
 
