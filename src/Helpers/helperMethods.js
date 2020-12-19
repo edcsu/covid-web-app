@@ -153,7 +153,7 @@ function getFormattedDate(date, prefomattedDate = false, hideYear = false) {
 }
 
 /**
- * getFormattedDate
+ * timeAgo
  * @description Takes in a date value and returns a formatted date based on time
  * difference with the current date-time
  */

@@ -4,18 +4,18 @@
   </div>
 </template>
 <script>
-  import QrcodeVue from 'qrcode.vue'    
-  import { appUrl } from "@/Helpers/apiHelpers";
-  export default {
-    name: "GenQrCode",
-    data() {
-      return {
-        value: appUrl,
-        size: 80,
-      }
-    },
-    components: {
-      QrcodeVue,
-    },
+import QrcodeVue from "qrcode.vue";
+import { appUrl } from "@/Helpers/apiHelpers";
+export default {
+  name: "GenQrCode",
+  data() {
+    return {
+      value: appUrl,
+      size: 80
+    };
+  },
+  components: {
+    QrcodeVue
   }
-</script> 
+};
+</script>
